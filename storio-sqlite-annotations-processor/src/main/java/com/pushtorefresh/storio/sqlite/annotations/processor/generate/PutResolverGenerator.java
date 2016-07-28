@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static com.pushtorefresh.storio.common.annotations.processor.generate.Common.ANDROID_NON_NULL_ANNOTATION_CLASS_NAME;
 import static com.pushtorefresh.storio.common.annotations.processor.generate.Common.INDENT;
-import static javax.lang.model.element.Modifier.PROTECTED;
+import static javax.lang.model.element.Modifier.FINAL;
 import static javax.lang.model.element.Modifier.PUBLIC;
 
 public class PutResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
@@ -53,7 +53,7 @@ public class PutResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
                 .addJavadoc("{@inheritDoc}\n")
                 .addAnnotation(Override.class)
                 .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
-                .addModifiers(PROTECTED)
+                .addModifiers(PUBLIC, FINAL)
                 .returns(ClassName.get("com.pushtorefresh.storio.sqlite.queries", "InsertQuery"))
                 .addParameter(ParameterSpec.builder(storIOSQLiteTypeClassName, "object")
                         .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
@@ -73,7 +73,7 @@ public class PutResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
                 .addJavadoc("{@inheritDoc}\n")
                 .addAnnotation(Override.class)
                 .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
-                .addModifiers(PROTECTED)
+                .addModifiers(PUBLIC, FINAL)
                 .returns(ClassName.get("com.pushtorefresh.storio.sqlite.queries", "UpdateQuery"))
                 .addParameter(ParameterSpec.builder(storIOSQLiteTypeClassName, "object")
                         .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
@@ -95,7 +95,7 @@ public class PutResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
                 .addJavadoc("{@inheritDoc}\n")
                 .addAnnotation(Override.class)
                 .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
-                .addModifiers(PUBLIC)
+                .addModifiers(PUBLIC, FINAL)
                 .returns(ClassName.get("android.content", "ContentValues"))
                 .addParameter(ParameterSpec.builder(storIOSQLiteTypeClassName, "object")
                         .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)

@@ -30,6 +30,7 @@ import static com.pushtorefresh.storio.common.annotations.processor.introspectio
 import static com.pushtorefresh.storio.common.annotations.processor.introspection.JavaType.SHORT;
 import static com.pushtorefresh.storio.common.annotations.processor.introspection.JavaType.SHORT_OBJECT;
 import static com.pushtorefresh.storio.common.annotations.processor.introspection.JavaType.STRING;
+import static javax.lang.model.element.Modifier.FINAL;
 import static javax.lang.model.element.Modifier.PUBLIC;
 
 public class GetResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
@@ -64,7 +65,7 @@ public class GetResolverGenerator implements Generator<StorIOSQLiteTypeMeta> {
                 .addJavadoc("{@inheritDoc}\n")
                 .addAnnotation(Override.class)
                 .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)
-                .addModifiers(PUBLIC)
+                .addModifiers(PUBLIC, FINAL)
                 .returns(storIOSQLiteTypeClassName)
                 .addParameter(ParameterSpec.builder(ClassName.get("android.database", "Cursor"), "cursor")
                         .addAnnotation(ANDROID_NON_NULL_ANNOTATION_CLASS_NAME)

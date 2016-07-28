@@ -44,7 +44,7 @@ public class GetResolverGeneratorTest {
                     "     */\n" +
                     "    @Override\n" +
                     "    @NonNull\n" +
-                    "    public TestItem mapFromCursor(@NonNull Cursor cursor) {\n" +
+                    "    public final TestItem mapFromCursor(@NonNull Cursor cursor) {\n" +
                     "        TestItem object = new TestItem();\n" +
                     "\n" +
                     "        object.field1 = cursor.getInt(cursor.getColumnIndex(\"column1\")) == 1;\n" +
@@ -141,7 +141,7 @@ public class GetResolverGeneratorTest {
                         "     */\n" +
                         "    @Override\n" +
                         "    @NonNull\n" +
-                        "    public TestItem mapFromCursor(@NonNull Cursor cursor) {\n" +
+                        "    public final TestItem mapFromCursor(@NonNull Cursor cursor) {\n" +
                         "        TestItem object = new TestItem();\n" +
                         "\n" +
                         "        object.field1 = cursor.getInt(cursor.getColumnIndex(\"column1\")) == 1;\n" +

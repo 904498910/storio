@@ -49,7 +49,7 @@ public class PutResolverGeneratorTest {
                     "     */\n" +
                     "    @Override\n" +
                     "    @NonNull\n" +
-                    "    protected InsertQuery mapToInsertQuery(@NonNull TestItem object) {\n" +
+                    "    public final InsertQuery mapToInsertQuery(@NonNull TestItem object) {\n" +
                     "        return InsertQuery.builder()\n" +
                     "            .table(\"test_table\")\n" +
                     "            .build();\n" +
@@ -63,7 +63,7 @@ public class PutResolverGeneratorTest {
                     "     */\n" +
                     "    @Override\n" +
                     "    @NonNull\n" +
-                    "    protected UpdateQuery mapToUpdateQuery(@NonNull TestItem object) {\n" +
+                    "    public final UpdateQuery mapToUpdateQuery(@NonNull TestItem object) {\n" +
                     "        return UpdateQuery.builder()\n" +
                     "            .table(\"test_table\")\n" +
                     "            .where(\"column1 = ?\")\n" +
@@ -79,7 +79,7 @@ public class PutResolverGeneratorTest {
                     "     */\n" +
                     "    @Override\n" +
                     "    @NonNull\n" +
-                    "    public ContentValues mapToContentValues(@NonNull TestItem object) {\n" +
+                    "    public final ContentValues mapToContentValues(@NonNull TestItem object) {\n" +
                     "        ContentValues contentValues = new ContentValues(2);\n" +
                     "\n" +
                     "        contentValues.put(\"column1\", object.column1Field);\n" +
@@ -170,7 +170,7 @@ public class PutResolverGeneratorTest {
                         "     */\n" +
                         "    @Override\n" +
                         "    @NonNull\n" +
-                        "    public ContentValues mapToContentValues(@NonNull TestItem object) {\n" +
+                        "    public final ContentValues mapToContentValues(@NonNull TestItem object) {\n" +
                         "        ContentValues contentValues = new ContentValues(2);\n" +
                         "\n" +
                         "        contentValues.put(\"column1\", object.column1Field);\n" +
